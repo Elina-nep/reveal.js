@@ -1,40 +1,218 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+  <title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="dist/theme/black.css">
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+  <!-- Theme used for syntax highlighted code -->
+  <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>Microservices Architecture with Docker Containers</h1>
+      </section>
+      <section>
+        <h2>Outline</h2>
+        <ol>
+          <li> Old-School Model</li>
+          <li> About Microservices</li>
+          <li> Technical Details</li>
+          <li> Containers</li>
+          <li> Docker</li>
+          <li> Final Words</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>“Monolithic” Applications</h2>
+
+		
+			
+		
+        <section>
+
+          <img data-src="./src/monolit.svg" alt="Monolithic" height="500">
+        </section>
+
+        <section>
+          <p><img data-src="./src/plus.svg" alt="plus" height="80"></p>
+          <ol>
+            <li> Less cross-cutting concerns</li>
+            <li> Easier debugging and testing</li>
+            <li> Simple to deploy</li>
+            <li> Simple to develop</li>
+          </ol>
+
+        </section>
+        <section>
+          <h3>When we still use it?</h3>
+          <p> When you have small application. Just simplify</p>
+        </section>
+        <section>
+          <p><img data-src="./src/minus.svg" alt="minus" height="80"></p>
+
+          <ol>
+            <li> Understanding</li>
+            <li> Making changes</li>
+            <li> Scalability</li>
+            <li> New technology barriers</li>
+          </ol>
+
+        </section>
+        <section>
+          <h3>And when not...</h3>
+          <p>For evolutive applications with number of different functions.</p>
+        </section>
+      </section>
+
+      <section>
+        <h2>Microservices</h2>
+        <section>
+          <img data-src="./src/micro.svg" alt="Microservices" height="500">
+        </section>
+        <section>
+          
+         
+		 <p> <img data-src="./src/plus.svg" alt="plus" height="80"></p>
+          <ol>
+            <li> Independent components</li>
+            <li> Easier understanding</li>
+            <li> Better scalability</li>
+            <li> Flexibility in choosing the technology</li>
+            <li> The higher level of agility</li>
+          </ol>
+         
+        </section>
+		<section>
+			<h3>When you need it </h3>
+			<p>A complex and scalable application.</p>
+		</section>
+        <section>
+          
+          
+		  <p><img data-src="./src/minus.svg" alt="minus" height="80"></p>
+          <ol>
+            <li>Extra complexity</li>
+            <li>System distribution</li>
+            <li>Cross-cutting concerns</li>
+            <li>Testing</li>
+          </ol>
+         
+        </section>
+		<section>
+			<h3>But remember about problems</h3>
+			<p>Without proper skills and knowledge, building a microservice application is extremely risky</p>
+		</section>
+        <section>
+          The microservices architecture is more beneficial for complex and evolving applications.
+		  <p><img data-src="./src/netflix-microservices.png" alt="micro" height="300"></p>
+		  
+		  
+        </section>
+      </section>
+
+      <section>
+        <h2>Catch some details</h2>
+
+      </section>
+
+      <section>
+        <h2>Patterns to Enable Microservices</h2>
+        <section>
+          <ol>
+            <li>Cultivate a solid foundation</li>
+            <li>Begin with the API</li>
+            <li>Ensure separation of concerns</li>
+            <li>Production approval through testing</li>
+            <li>Automate Deployment</li>
+          </ol>
+
+        </section>
+        <section>
+          <h3> Use containers</h3>
+        </section>
+      </section>
+      <section>
+        <h2>Understanding Containers</h2>
+        <section>
+          <img data-src="./src/containers.svg" alt="Containers" height="400">
+          <p>A container is a standard unit of software that packages up code and all its dependencies.
+          </p>
+        </section>
+        <section>
+          <img data-src="./src/plus.svg" alt="plus" height="80">
+          <ul>
+            <li>Lightweight</li>
+            <li>
+              Portable and platform independent
+            </li>
+            <li>Supports modern development and architecture</li>
+            <li>Improves utilization</li>
+          </ul>
+        </section>
+        <section>Containers are small and lightweight, which makes them a good match for microservice architectures where applications are constructed of many, loosely coupled and independently deployable smaller services.</section>
+
+      </section>
+
+      <section>
+        <h3>Docker</h3>
+        <section>
+          <img data-src="./src/Moby-logo.png" alt="Docker" height="300">
+          <p>Docker was launched in 2013 as an open source platform for developing, shipping, and running applications.</p>
+        </section>
+
+        <section>
+          <img data-src="./src/plus.svg" alt="plus" height="80">
+          <ul>
+            <li>Fast, consistent delivery of applications</li>
+            <li>Responsive deployment and scaling</li>
+            <li>Running more workloads on the same hardware </li>
+          </ul>
+        </section>
+        <section>
+          <img data-src="./src/docker.svg" alt="Docker" height="500">
+        </section>
+
+      </section>
+	  <section>
+		  <h2>Outcome</h2>
+		  <section>
+			  <ul>
+				  <li>Docker offers high flexibility in usage</li>
+				  <li>Updates and upgrades on the deploy can be interchanged easily</li>
+				  <li>The docker can be built locally, upgraded to be deployed to the cloud and can be run anywhere</li>
+				  <li>Container replicas can be created and scaled easily and increased with efficiency</li>
+			  </ul>
+		  </section>
+	  </section>
+    </div>
+  </div>
+
+  <script src="dist/reveal.js"></script>
+  <script src="plugin/notes/notes.js"></script>
+  <script src="plugin/markdown/markdown.js"></script>
+  <script src="plugin/highlight/highlight.js"></script>
+  <script>
+    // More info about initialization & config:
+    // - https://revealjs.com/initialization/
+    // - https://revealjs.com/config/
+    Reveal.initialize({
+      hash: true,
+
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+    });
+  </script>
+</body>
+
 </html>
